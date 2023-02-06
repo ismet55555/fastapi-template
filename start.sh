@@ -1,6 +1,7 @@
 #! /usr/bin/env sh
 set -e
 
+echo "Current directory: $(pwd)"
 
 if [ -f /app/app/main.py ]; then
     DEFAULT_MODULE_NAME=app.main

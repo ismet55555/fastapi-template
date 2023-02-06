@@ -20,8 +20,9 @@ wheel = "*"
 
 [packages]
 fastapi = "*"
-uvicorn = "*"
 gunicorn = "*"
+python-dotenv = "*"
+uvicorn = "*"
 
 [pipenv]
 allow_prereleases = false
