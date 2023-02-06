@@ -1,6 +1,6 @@
-# test_fastapi
+# FastAPI Template Project
 
-TODO
+Starter project for any FastAPI backend REST API applications.  This project is used with Docker.
 
 ## Usage
 
