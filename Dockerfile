@@ -1,10 +1,8 @@
 ###########################################################
 #
-# Base Images:
-#
-# https://github.com/tiangolo/uvicorn-gunicorn-docker
-#     |
-#     |--> https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
+# This is based on the following work:
+#  - https://github.com/tiangolo/uvicorn-gunicorn-docker
+#  - https://github.com/tiangolo/uvicorn-gunicorn-fastapi-docker
 #
 ###########################################################
 

@@ -15,7 +15,7 @@ docker compose up --build
 
 ```bash
 docker build --tag app
-docker run --env-file .env --publish 8000:8000 app
+docker run --env-file .env --publish 8080:8080 app
 ```
 
 ### No Docker
@@ -31,7 +31,7 @@ gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py app.main:app
 ### Docker
 ```bash
 docker build --tag app
-docker run --env-file .env --publish 8000:8000 --volume $(pwd):/app app /start-reload.sh
+docker run --env-file .env --publish 8080:8080 --volume $(pwd):/app app /start-reload.sh
 ```
 
 ### No Docker
