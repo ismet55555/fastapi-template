@@ -1,0 +1,27 @@
+# -*- mode: toml -*-
+# vim: set filetype=toml
+
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[requires]
+python_version = "3"
+
+[dev-packages]
+black ="*"
+isort = "*"
+mypy = "*"
+myst_parser = "*"
+pre-commit = "*"
+pylint = "*"
+wheel = "*"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+gunicorn = "*"
+
+[pipenv]
+allow_prereleases = false
