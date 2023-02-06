@@ -1,7 +1,7 @@
 """Just messing around"""
 
 
-class SomeInterface():
+class SomeInterface:
     """TODO"""
 
     def __init__(self) -> None:

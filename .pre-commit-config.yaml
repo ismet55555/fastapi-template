@@ -1,6 +1,21 @@
+# -*- mode: yaml -*-
+# vim: set filetype=yaml
+# atom: set grammar=yaml
+---
 repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-docstring-first
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+        files: (.yaml|.yml)
+
   - repo: https://github.com/myint/autoflake
-    rev: v1.4
+    rev: v2.0.1
     hooks:
       - id: autoflake
         exclude: .*/__init__.py
@@ -10,6 +25,7 @@ repos:
           - --expand-star-imports
           - --remove-duplicate-keys
           - --remove-unused-variables
+
   - repo: local
     hooks:
       - id: flake8
@@ -17,11 +33,18 @@ repos:
         entry: flake8
         language: system
         types: [python]
-  - repo: https://github.com/pre-commit/mirrors-isort
-    rev: v5.4.2
+
+  - repo: https://github.com/psf/black
+    rev: 23.1.0
+    hooks:
+      - id: black
+        language_version: python3.10
+
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
     hooks:
       - id: isort
-        args: ["--profile", "black"]
+
   - repo: local
     hooks:
       - id: mypy
@@ -29,8 +52,3 @@ repos:
         entry: mypy
         language: system
         types: [python]
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.3.0
-    hooks:
-      - id: trailing-whitespace
-      - id: end-of-file-fixer

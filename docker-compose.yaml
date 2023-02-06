@@ -1,3 +1,6 @@
+# -*- mode: yaml -*-
+# vim: set filetype=yaml
+# atom: set grammar=yaml
 ---
 version: "3.8"
 

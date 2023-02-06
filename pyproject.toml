@@ -1,0 +1,36 @@
+# General settings and configurations for python project
+
+[tool.pytest.ini_options]
+log_level = "INFO"
+testpaths = "tests"
+python_files = "tests_*.py"
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+multi_line_output = 3
+line_length = 100
+include_trailing_comma = true
+supported_extensions = ["py"]
+extend_skip = ["env", ".vscode", ".pytest_cache", "mypy_cache"]
+
+[tool.black]
+line_length = 100
+exclude = """
+/(
+  .toml
+  |.yaml
+  |.sh
+  |.git
+  |.ini
+  |pyproject.toml
+  |Dockerfile
+  |Pipfile
+  |Pipfile.lock
+  |env
+  |venv
+  |build
+  |dist
+  |.mypy_cache
+)/
+"""

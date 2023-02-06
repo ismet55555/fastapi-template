@@ -1,4 +1,3 @@
-
 from typing import List, Union
 
 from pydantic import AnyHttpUrl, BaseSettings, validator
@@ -6,6 +5,7 @@ from pydantic import AnyHttpUrl, BaseSettings, validator
 
 class Settings(BaseSettings):
     """TODO"""
+
     PROJECT_NAME: str
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = []
 
@@ -19,6 +19,7 @@ class Settings(BaseSettings):
 
     class Config:
         """TODO"""
+
         case_sensitive = True
         env_file = ".env"
 
