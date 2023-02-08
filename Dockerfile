@@ -16,7 +16,7 @@ RUN apt-get update && apt-get -q install -y \
   vim \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
-RUN pip install --upgrade pip pipenv
+RUN pip install --no-cache-dir --upgrade pip pipenv
 
 COPY ./start.sh /start.sh
 RUN chmod +x /start.sh
