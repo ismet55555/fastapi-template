@@ -2,7 +2,7 @@
 
 - Starter project for any FastAPI backend REST API applications
 - This server can be used with or without Docker
-- By default the server will run on port 8080
+- By default the server will run on port 8000
 
 TODO:
   - Everything into pyproject.toml
@@ -18,7 +18,7 @@ docker compose up --build
 
 ```bash
 docker build --tag app
-docker run --env-file .env --publish 8080:8080 app
+docker run --env-file .env --publish 8000:8000 app
 ```
 
 ### No Docker
@@ -33,11 +33,11 @@ gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py app.main:app
 
 ```bash
 docker build --tag app
-docker run --env-file .env --publish 8080:8080 --volume $(pwd):/app app /start-reload.sh
+docker run --env-file .env --publish 8000:8000 --volume $(pwd):/app app /start-reload.sh
 ```
 
 ### No Docker
 
 ```bash
-uvicorn --reload --host=0.0.0.0 --port 8080 --log-level "info" app.main:app
+uvicorn --reload --host=0.0.0.0 --port 8000 --log-level "info" app.main:app
 ```
