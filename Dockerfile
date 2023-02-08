@@ -6,10 +6,11 @@
 #
 ###########################################################
 
-FROM python:3.11
+FROM python:3.11-slim
+# FROM python:3.11
 
 LABEL maintainer="Ismet Handzic <ismet.handzic@gmail.com"
-LABEL description="FastAPI server"
+LABEL description="FastAPI Sample Server"
 
 RUN apt-get update && apt-get -q install -y \
   vim \
@@ -25,8 +26,6 @@ RUN chmod +x /start-reload.sh
 COPY ./gunicorn_conf.py /gunicorn_conf.py
 
 COPY Pipfile* /
-RUN pipenv --version
-RUN pipenv --help
 RUN pipenv requirements > /requirements.txt
 RUN pip install --no-cache-dir -r /requirements.txt
 
@@ -43,10 +42,6 @@ RUN useradd -ms /bin/bash appuser
 COPY --chown=root:root ./.container/ /root/
 COPY --chown=appuser:appuser ./.container/ /home/appuser/
 
-RUN ls -la /root/
-RUN ls -la /home/appuser/
-
 USER appuser
-
 
 CMD ["/start.sh"]

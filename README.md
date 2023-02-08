@@ -4,10 +4,13 @@
 - This server can be used with or without Docker
 - By default the server will run on port 8080
 
+TODO:
+  - Everything into pyproject.toml
+  - Colorize prompt inside container
+
 ## Usage
 
-
-### Docker 
+### Docker
 
 ```bash
 docker compose up --build
@@ -24,11 +27,10 @@ docker run --env-file .env --publish 8080:8080 app
 gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py app.main:app
 ```
 
-
 ## Development
 
-
 ### Docker
+
 ```bash
 docker build --tag app
 docker run --env-file .env --publish 8080:8080 --volume $(pwd):/app app /start-reload.sh
