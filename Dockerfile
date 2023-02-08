@@ -18,10 +18,8 @@ RUN apt-get update && apt-get -q install -y \
   && apt-get clean
 RUN pip install --no-cache-dir --upgrade pip pipenv
 
-COPY ./start.sh /start.sh
-RUN chmod +x /start.sh
-COPY ./start-reload.sh /start-reload.sh
-RUN chmod +x /start-reload.sh
+COPY --chmod=0755 ./start.sh /start.sh
+COPY --chmod=0755 ./start-reload.sh /start-reload.sh
 
 COPY ./gunicorn_conf.py /gunicorn_conf.py
 
