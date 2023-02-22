@@ -7,7 +7,6 @@
 ###########################################################
 
 FROM python:3.11-slim
-# FROM python:3.11
 
 LABEL maintainer="Ismet Handzic <ismet.handzic@gmail.com"
 LABEL description="FastAPI Sample Server"

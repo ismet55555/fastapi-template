@@ -5,8 +5,10 @@
 - By default the server will run on port 8000
 
 TODO:
-  - Everything into pyproject.toml
-  - Colorize prompt inside container
+
+- Everything into pyproject.toml
+- Colorize prompt inside container
+- Logging setup
 
 ## Usage
 
@@ -24,7 +26,8 @@ docker run --env-file .env --publish 8000:8000 app
 ### No Docker
 
 ```bash
-gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py app.main:app
+pipenv sync
+pipenv run gunicorn -k uvicorn.workers.UvicornWorker -c gunicorn_conf.py app.main:app
 ```
 
 ## Development
@@ -39,5 +42,6 @@ docker run --env-file .env --publish 8000:8000 --volume $(pwd):/app app /start-r
 ### No Docker
 
 ```bash
-uvicorn --reload --host=0.0.0.0 --port 8000 --log-level "info" app.main:app
+pipenv sync --dev
+pipenv run uvicorn --reload --host=0.0.0.0 --port 8000 --log-level "info" app.main:app
 ```
